@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aqaraty — Support</title>
+<style>
+  :root {
+    --ink: #16202c;
+    --muted: #5b6875;
+    --line: #e4e9ef;
+    --blue: #1c6bdb;
+    --teal: #29b59e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.65;
+    background: #fbfcfd;
+  }
+  header {
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    color: #fff;
+    padding: 44px 22px 38px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .mark {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: rgba(255,255,255,.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  h1 { margin: 0; font-size: 30px; letter-spacing: -.5px; }
+  .sub { margin: 2px 0 0; opacity: .92; font-size: 15px; }
+  main { padding: 34px 22px 60px; }
+  h2 { font-size: 19px; margin: 32px 0 6px; }
+  p, li { color: var(--muted); }
+  p { margin: 10px 0; }
+  strong { color: var(--ink); }
+  a { color: var(--blue); }
+  .contact {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 24px 0 8px;
+  }
+  .contact p { margin: 0 0 6px; }
+  .email { font-size: 19px; font-weight: 600; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 4px; }
+  .pill {
+    background: #fff; border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 13px; font-size: 13.5px; color: var(--muted);
+  }
+  .qa { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 14px; }
+  .qa h3 { margin: 0 0 4px; font-size: 16px; }
+  .qa p { margin: 0 0 10px; }
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 24px 22px 50px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <div class="mark">🏢</div>
+    <div>
+      <h1>Aqaraty — Support</h1>
+      <p class="sub">عقاراتي · Rent, tenants, repairs and cash flow</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p>Aqaraty keeps track of your rental properties: who is renting them, what the rent is, whether
+  it has been paid, what you have spent on repairs and taxes, and what is left over. Everything
+  stays on your own device and in your own iCloud.</p>
+
+  <div class="pills">
+    <span class="pill">No account</span>
+    <span class="pill">No ads</span>
+    <span class="pill">No data collected</span>
+    <span class="pill">English &amp; العربية</span>
+    <span class="pill">iPhone &amp; iPad</span>
+  </div>
+
+  <div class="contact">
+    <p>Questions, problems, or something you wish the app did?</p>
+    <p class="email"><a href="mailto:firasrabi@gmail.com">firasrabi@gmail.com</a></p>
+    <p>I read every message and reply as soon as I can.</p>
+  </div>
+
+  <h2>Common questions</h2>
+
+  <div class="qa">
+    <h3>How does the app know when rent is due?</h3>
+    <p>It works the dates out from the lease itself. You set when the first payment is due and how
+    often rent is paid — monthly, every three months, every six months, yearly, or a custom number
+    of months — and every future due date follows from that. Tap an unpaid one to record the money,
+    including a part payment.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Will it remind me before rent is due?</h3>
+    <p>Yes. You choose how many days' notice you want. You also get a reminder the day after rent is
+    late, and thirty days before a lease ends. These are scheduled on your own device and arrive
+    whether or not the app is open.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Does my data sync between my iPhone and iPad?</h3>
+    <p>Yes, through your own private iCloud, as long as both devices are signed in to the same Apple
+    Account with iCloud switched on. Nothing passes through any server belonging to the app.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Can I send a tenant a reminder or a receipt?</h3>
+    <p>Yes. The app writes the reminder for you and opens WhatsApp with it ready to send — you read
+    it first and decide. Tapping a paid rent row produces a receipt you can send the same way. Both
+    can be written in the tenant's own language, which you set per tenant, and you can rewrite the
+    wording yourself in Settings.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Can I use the app in Arabic?</h3>
+    <p>Yes — Settings › Language, with the whole interface laid out right-to-left. The language you
+    read the app in and the language you write to tenants in are set separately.</p>
+  </div>
+
+  <div class="qa">
+    <h3>How do I get my data out?</h3>
+    <p>Settings › Export. You can produce a yearly statement for a property as a PDF, and export
+    everything as spreadsheet files you can open in Numbers or Excel and keep as your own backup.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Is my tenants' information safe?</h3>
+    <p>It never leaves your device and your iCloud. You can also switch on Face ID in Settings so
+    the app cannot be opened by anyone who picks up your device. See the
+    <a href="./aqaraty-privacy.html">privacy policy</a> for the detail.</p>
+  </div>
+
+  <div class="qa">
+    <h3>I sold a property. Will deleting it erase the history?</h3>
+    <p>Yes, which is usually not what you want. Use <strong>Archive</strong> instead — on the
+    property's edit screen. It disappears from your lists and stops counting in your totals, but
+    every payment and repair is kept.</p>
+  </div>
+
+  <p style="margin-top:28px"><em>Aqaraty is a record-keeping tool. It does not provide legal,
+  accounting or tax advice.</em></p>
+
+</main>
+
+<footer class="wrap">
+  © 2026 Dr. Firas Rabi · <a href="./aqaraty-privacy.html">Privacy policy</a>
+</footer>
+
+</body>
+</html>
