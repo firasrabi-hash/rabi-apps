@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aqaraty — User guide · دليل الاستخدام</title>
+<meta name="description" content="Every feature of Aqaraty explained — what it is, why it's there, and how to use it. شرح كل ميزات عقاراتي.">
+<style>
+  :root {
+    --ink: #16202c;
+    --muted: #4f5c69;
+    --line: #e4e9ef;
+    --blue: #0a6fd8;
+    --deep: #0e3a5c;
+    --teal: #068c74;
+    --card: #ffffff;
+    --bg: #fbfcfd;
+    --tint: #eef5fd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #eef2f6; --muted: #aab6c2; --line: #2a3542; --card: #151d26; --bg: #0d141b; --tint: #132538; --blue: #5aa6ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Arabic", "Segoe UI", Tahoma, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.75;
+    background: var(--bg);
+  }
+  header {
+    background: linear-gradient(135deg, #0a6fd8, #068c74);
+    color: #fff;
+    padding: 34px 18px 30px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .mark {
+    width: 52px; height: 52px; border-radius: 14px; flex: none;
+    background: rgba(255,255,255,.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 800;
+  }
+  h1 { margin: 0; font-size: 28px; line-height: 1.25; }
+  .sub { margin: 4px 0 0; opacity: .92; font-size: 15px; }
+  .switch {
+    display: flex; border: 1px solid rgba(255,255,255,.5); border-radius: 999px; overflow: hidden; flex: none;
+  }
+  .switch button {
+    background: transparent; color: #fff; border: 0; padding: 7px 14px; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
+    min-height: 40px;
+  }
+  .switch button[aria-pressed="true"] { background: #fff; color: #0e3a5c; }
+  main { padding: 26px 18px 60px; }
+  nav.toc {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin: 4px 0 26px;
+  }
+  nav.toc strong { display: block; margin-bottom: 6px; }
+  nav.toc ol { margin: 0; padding-inline-start: 22px; columns: 2; column-gap: 28px; }
+  nav.toc li { break-inside: avoid; color: var(--muted); }
+  @media (max-width: 560px) { nav.toc ol { columns: 1; } }
+  h2 {
+    font-size: 21px; margin: 38px 0 8px; padding-top: 6px; scroll-margin-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: 0; }
+  h3 { font-size: 16.5px; margin: 20px 0 2px; }
+  p, li { color: var(--muted); }
+  p { margin: 8px 0; }
+  strong, b { color: var(--ink); }
+  a { color: var(--blue); }
+  ul, ol { padding-inline-start: 22px; }
+  .why { background: var(--tint); border-radius: 12px; padding: 10px 14px; margin: 10px 0; }
+  .why b { color: var(--ink); }
+  .path {
+    display: inline-block; background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 0 8px; font-size: .94em; color: var(--ink); white-space: nowrap;
+  }
+  .pro {
+    display: inline-block; background: #fcc024; color: #3d2a00; font-size: 12px; font-weight: 800;
+    border-radius: 6px; padding: 0 7px; vertical-align: 2px;
+  }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+  .pill { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13.5px; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 22px 18px 50px; font-size: 14px; color: var(--muted); }
+  [data-lang] { display: none; }
+  body.ar [data-lang="ar"], body.en [data-lang="en"] { display: block; }
+  body.ar span[data-lang="ar"], body.en span[data-lang="en"] { display: inline; }
+</style>
+</head>
+<body class="ar">
+
+<header>
+  <div class="wrap top">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">ع</div>
+      <div>
+        <h1><span data-lang="ar">دليل استخدام عقاراتي</span><span data-lang="en">Aqaraty user guide</span></h1>
+        <p class="sub"><span data-lang="ar">كل ميزة مشروحة: شو هي، ليش موجودة، وكيف تستعملها.</span><span data-lang="en">Every feature explained: what it is, why it's there, and how to use it.</span></p>
+      </div>
+    </div>
+    <div class="switch" role="group" aria-label="Language / اللغة">
+      <button type="button" id="btn-ar" lang="ar" aria-pressed="true">عربي</button>
+      <button type="button" id="btn-en" lang="en" aria-pressed="false">English</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ═══════════════════════════ ARABIC ═══════════════════════════ -->
+<div data-lang="ar" lang="ar" dir="rtl">
+
+  <p>عقاراتي بيتابع عقاراتك المؤجرة: مين المستأجر، قديش الإيجار، مين دفع ومين متأخر، شو صرفت على الصيانة والفواتير والضرائب، وشو ضايل إلك بالآخر. كل بياناتك بتضل على جهازك وبحساب iCloud الخاص فيك — ما بتنبعت لإلنا ولا لأي حدا.</p>
+
+  <div class="pills">
+    <span class="pill">بدون حساب</span><span class="pill">بدون إعلانات</span><span class="pill">ما بنجمع بيانات</span><span class="pill">عربي وإنجليزي</span><span class="pill">آيفون وآيباد</span>
+  </div>
+
+  <nav class="toc" aria-label="المحتويات">
+    <strong>المحتويات</strong>
+    <ol>
+      <li><a href="#ar-start">البداية</a></li>
+      <li><a href="#ar-home">الشاشة الرئيسية</a></li>
+      <li><a href="#ar-props">العقارات والعمارات</a></li>
+      <li><a href="#ar-tenants">المستأجر والعقد</a></li>
+      <li><a href="#ar-rent">تسجيل الإيجار</a></li>
+      <li><a href="#ar-remind">التذكير والوصولات على واتساب</a></li>
+      <li><a href="#ar-costs">المصاريف والصيانة</a></li>
+      <li><a href="#ar-bills">تفقّد فواتير الكهربا والمي</a></li>
+      <li><a href="#ar-alerts">التنبيهات</a></li>
+      <li><a href="#ar-money">تبويب المالية والتقارير</a></li>
+      <li><a href="#ar-settings">الإعدادات</a></li>
+      <li><a href="#ar-pro">عقاراتي برو</a></li>
+      <li><a href="#ar-privacy">الخصوصية والنسخ الاحتياطي</a></li>
+      <li><a href="#ar-help">المساعدة</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="ar-start">1. البداية</h2>
+  <h3>دليل أول مرة</h3>
+  <p>أول ما تفتح التطبيق وهو فاضي، بيمشي معك دليل من 5 خطوات: اللغة ووين أول عقار عندك (بيختار العملة ورمز الدولة للتلفونات)، ثم العقار، ثم المستأجر، ثم الإيجار وطرق الدفع، ثم التنبيهات. بتقدر تضغط «تخطّي» بأي خطوة، واللي عبّيته بينحفظ.</p>
+  <div class="why"><b>ليش؟</b> عشان توصل لأول تذكير وأول وصل بدقيقتين، بدون ما تدوّر بالقوائم.</div>
+  <ul>
+    <li>زر <b>«ع / EN»</b> فوق بيغيّر لغة التطبيق كلها بأي لحظة، وما بيضيع شي من اللي كتبته.</li>
+    <li>إذا المستأجر ساكن من زمان: اختار تاريخ بداية العقد الحقيقي، وفعّل «المستأجر دافع كل الإيجارات اللي استحقت قبل اليوم» — فبتنسجل مدفوعة وما بتطلع عليه متأخرات وهمية. إذا لسا عليه شي، طفّيها وسجّل اللي دفعه.</li>
+    <li>بدك تتفرج قبل؟ اضغط «أو جرّب التطبيق ببيانات تجريبية». البيانات التجريبية ما بتنحسب من عقاراتك.</li>
+  </ul>
+
+  <h3>رقم التلفون</h3>
+  <p>كل رقم إله زر رمز دولة خاص فيه (الأردن والخليج أول القائمة)، فالمستأجر ممكن يكون برقم من أي دولة. إذا لصقت رقم بيبدأ بـ ‎+971 أو ‎00966 الرمز بيتغيّر لحاله، والصفر بالبداية والفراغات بتنشال، والأرقام العربية ٠١٢ بتتحول. إذا عدد الأرقام مش مزبوط بيطلعلك تنبيه — بس ما بيمنعك تحفظ.</p>
+
+  <h2 id="ar-home">2. الشاشة الرئيسية</h2>
+  <ul>
+    <li><b>سجّل دفعة</b> — لما يوصلك إيجار: بتختار مين دفع، والمبلغ المستحق بيكون جاهز. إذا في دفعة وحدة بس مستحقة، بيفتحها مباشرة.</li>
+    <li><b>أضف مصروف</b> — صيانة، فاتورة، ضريبة… لعقار معيّن أو للعمارة كلها.</li>
+    <li><b>المبالغ</b> — المقبوض، المصروف، الصافي، والإيجار غير المدفوع، لهذا الشهر أو هذه السنة أو كل الفترات.</li>
+    <li><b>يحتاج انتباهك</b> — إيجار متأخر، وقت المتابعة بعد تذكير، عقد قرب يخلص، صيانة غير مدفوعة، فواتير ما تفقّدتها، أقساط مستحقة. اضغط على السطر لتتصرف.</li>
+    <li><b>قادم</b> — الإيجارات الجاية بالترتيب.</li>
+  </ul>
+
+  <h2 id="ar-props">3. العقارات والعمارات</h2>
+  <h3>إضافة عقار</h3>
+  <p><span class="path">العقارات ← + ← إضافة عقار</span>. اكتب اسم بتعرفه (مثلاً «شقة الجبيهة 2»)، والنوع، واللون، وأرقام عدادات الكهربا والمي (اضغط على الرقم لتنسخه)، وملاحظات.</p>
+  <div class="why"><b>الاسم الرسمي:</b> اسمك الخاص للعقار بيضل جوّا التطبيق. «الاسم الرسمي» بالعربي والإنجليزي هو اللي بيطلع للمستأجر بالرسائل والوصولات.</div>
+  <h3>العمارات</h3>
+  <p><span class="path">العقارات ← + ← إضافة عمارة</span>، ثم من صفحة العمارة: «إضافة وحدات» — إما «نقل عقارات موجودة» أو «إنشاء وحدة جديدة».</p>
+  <ul>
+    <li>دخل كل شقة لوحدها، ومجموع دخل العمارة.</li>
+    <li>«إضافة مصروف للعمارة» و«إضافة صيانة للعمارة» — لمصاريف بتخص العمارة كلها، مثل تنظيف خزانات المي أو الدرج أو الحارس. بتنحسب على العمارة، مش موزعة على الشقق.</li>
+    <li>حذف العمارة ما بيحذف شققها — بترجع عقارات مستقلة. عمارة عليها مصاريف ما بتنحذف؛ بتقدر تأرشفها.</li>
+  </ul>
+  <h3>الأرشفة</h3>
+  <p>بعت عقار أو ما عاد تديره؟ «مؤرشف» بيخبيه من القوائم بدون ما يمسح تاريخه.</p>
+
+  <h2 id="ar-tenants">4. المستأجر والعقد</h2>
+  <p>من صفحة العقار: <span class="path">إضافة مستأجر وإيجار</span>.</p>
+  <ul>
+    <li><b>الاسم</b> — وبالعربي إذا بدك (بيطلع بالرسائل العربية).</li>
+    <li><b>الإيجار</b> — المبلغ وكل قديش (شهري، كل 3 شهور، كل 6 شهور، سنوي، أو عدد شهور تختاره) وتاريخ أول دفعة. مواعيد الدفع بتنحسب لحالها.</li>
+    <li><b>العقد</b> — تاريخ انتهاء (اختياري)، التأمين، و«التأمين رجع».</li>
+    <li><b>المستندات</b> — العقد (PDF أو صورة أو تصوير ورقة بالكاميرا) وصورة الهوية من الجهتين.</li>
+    <li><b>لغة الرسائل</b> — لكل مستأجر لغته (9 لغات)، وبتنحفظ لكل الرسائل الجاية.</li>
+  </ul>
+  <p>من نفس الصفحة: <b>تجديد العقد</b> (عقد جديد وبيسكّر القديم) و<b>إنهاء العقد / المستأجر طلع</b>. المستأجرين السابقين بيضلوا تحت «مستأجرون سابقون».</p>
+
+  <h2 id="ar-rent">5. تسجيل الإيجار</h2>
+  <ul>
+    <li><b>دفعة جزئية</b> — اكتب المبلغ اللي وصلك؛ الباقي بيضل عليه.</li>
+    <li><b>دفعة عن أكثر من شهر</b> — إذا المبلغ أكبر من إيجار واحد، بيتوزع على الشهور. إذا عليه متأخرات، بتختار: الزيادة على «الأشهر السابقة غير المدفوعة» (الأقدم أول) أو «الأشهر التالية».</li>
+    <li><b>خصم</b> — بيقلّل المستحق بس ما بينحسب كمبلغ مستلم.</li>
+    <li><b>إعطاء مهلة</b> — بتأجّل موعد إيجار، وما بيعتبر متأخر لحد الموعد الجديد.</li>
+    <li><b>تعديل أو حذف</b> — اضغط على سطر الإيجار وبعدين على الدفعة.</li>
+    <li>تحت كل إيجار مدفوع بيطلع <b>تاريخ الاستلام</b> — عشان تطابقه مع كشف البنك.</li>
+  </ul>
+
+  <h2 id="ar-remind">6. التذكير والوصولات على واتساب</h2>
+  <p>من صفحة العقار: <span class="path">أرسل تذكير بالإيجار</span>. بيفتح واتساب والرسالة جاهزة بلغة المستأجر، وفيها كل المستحق (كل شهر متأخر على سطر والمجموع). إذا فعّلت، بيطلع بآخرها اسم CliQ ورقم زين كاش تبعك.</p>
+  <ul>
+    <li><b>سجل التذكيرات</b> — تحت الزر: «التذكير الثاني من 5 أيام». التطبيق بيعرف إنك فتحت واتساب، مش إنك بعتت فعلاً.</li>
+    <li><b>وقت المتابعة</b> — إذا ضل الإيجار غير مدفوع بعد عدد أيام من آخر تذكير (من الإعدادات)، بيطلع بـ«يحتاج انتباهك».</li>
+    <li><b>الوصل</b> — اضغط على إيجار مدفوع ← «وصل»: صورة مرتبة بتبعتها على واتساب، وفيها المتبقي إذا عليه شي.</li>
+    <li><b>نص التذكير</b> <span class="pro">PRO</span> — <span class="path">الإعدادات ← رسالة التذكير</span>: اكتب نصك لكل لغة، مع {tenant} {property} {amount} {date}.</li>
+  </ul>
+
+  <h2 id="ar-costs">7. المصاريف والصيانة</h2>
+  <ul>
+    <li><b>صيانة</b> — العنوان، الفني ورقمه (التطبيق بيتذكره)، الحالة (للعمل، مجدول، تم)، الكلفة، تاريخ الدفع. الصيانة بتنحسب بالمصروف لما تندفع.</li>
+    <li><b>مصروف</b> — ضريبة، تأمين، أثاث، معاملات… مع صورة الفاتورة.</li>
+    <li><b>الفئات</b> — قائمة وحدة للصيانة والمصاريف، بتعدّلها من <span class="path">الإعدادات ← الفئات</span>.</li>
+    <li><b>بالأقساط</b> — فعّل «مدفوع بالأقساط»، وأضف الأقساط. القسط اللي لسا ما اندفع اختار له «لم تُدفع بعد — ذكّرني في يومها».</li>
+  </ul>
+
+  <h2 id="ar-bills">8. تفقّد فواتير الكهربا والمي</h2>
+  <p>المستأجر بيدفع الفواتير، بس اللي ما بيندفع بيصير عليك لما يطلع. فعّل <span class="path">الإعدادات ← تفقّد شهري للفواتير</span> واختار اليوم. كل شهر بتعلّم كل فاتورة مدفوعة أو لا، مع المبلغ وصورة إذا بدك. الفاتورة غير المدفوعة بتضل بـ«يحتاج انتباهك».</p>
+
+  <h2 id="ar-alerts">9. التنبيهات</h2>
+  <ul>
+    <li>قبل موعد الإيجار بعدد أيام تختاره، وتاني يوم إذا تأخر.</li>
+    <li>قبل انتهاء العقد — 90 و60 و30 يوم، أو مواعيد تضيفها.</li>
+    <li>يوم القسط المخطط، ويوم تفقّد الفواتير.</li>
+  </ul>
+  <p>لازم تسمح بالتنبيهات أول مرة. إذا ما وصلتك: <span class="path">معلومات ← أذونات التطبيق</span>.</p>
+
+  <h2 id="ar-money">10. تبويب المالية والتقارير</h2>
+  <p>كل الدفعات والصيانة والمصاريف لكل العقارات بمكان واحد، مع بحث. اسحب الدفعة جانباً لتعدلها. <b>«المصاريف حسب الفئة»</b> بيجاوب على «قديش صرفت على السباكة هالسنة؟» — من الصيانة والمصاريف مع بعض.</p>
+
+  <h2 id="ar-settings">11. الإعدادات</h2>
+  <ul>
+    <li>لغة التطبيق، ولغة الرسائل الافتراضية.</li>
+    <li>العملة. <b>طرق الدفع</b>: أضف، غيّر الاسم، رتّب، خبّي، واختار الافتراضية.</li>
+    <li>كيف بيدفعولك: اسم CliQ ورقم زين كاش.</li>
+    <li>التذكيرات والمتابعة وتنبيهات انتهاء العقد.</li>
+    <li>قفل بـ Face ID.</li>
+    <li>الكشوفات والنسخ الاحتياطي.</li>
+  </ul>
+
+  <h2 id="ar-pro">12. عقاراتي برو</h2>
+  <p>النسخة المجانية فيها <b>عقار واحد</b> شغّال بالكامل. برو بيفتح: عدد غير محدود من العقارات، الكشف السنوي PDF، ونص التذكير الخاص فيك. نسخة CSV الاحتياطية مجانية دايماً لأنها بياناتك. الأسعار بتطلع داخل التطبيق.</p>
+
+  <h2 id="ar-privacy">13. الخصوصية والنسخ الاحتياطي</h2>
+  <p>كل شي على جهازك وبحساب iCloud الخاص فيك، وبيتزامن بين أجهزتك. إحنا ما بنشوف بياناتك. بس النسخة اللي بتحتفظ فيها بنفسك بتفيد: <span class="path">الإعدادات ← الكشوفات والنسخ الاحتياطي</span>.</p>
+
+  <h2 id="ar-help">14. المساعدة</h2>
+  <p>سؤال، مشكلة، أو فكرة؟ <a href="mailto:firasrabi@gmail.com">firasrabi@gmail.com</a> — أو من التطبيق: <span class="path">معلومات ← راسل المطوّر</span>.</p>
+</div>
+
+<!-- ═══════════════════════════ ENGLISH ═══════════════════════════ -->
+<div data-lang="en" lang="en" dir="ltr">
+
+  <p>Aqaraty keeps track of your rental properties: who the tenant is, what the rent is, who has paid and who is late, what you have spent on repairs, bills and taxes, and what is left over. Everything stays on your device and in your own iCloud — it is never sent to us or anyone else.</p>
+
+  <div class="pills">
+    <span class="pill">No account</span><span class="pill">No ads</span><span class="pill">No data collected</span><span class="pill">English &amp; العربية</span><span class="pill">iPhone &amp; iPad</span>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <strong>Contents</strong>
+    <ol>
+      <li><a href="#en-start">Getting started</a></li>
+      <li><a href="#en-home">Home</a></li>
+      <li><a href="#en-props">Properties and buildings</a></li>
+      <li><a href="#en-tenants">Tenants and leases</a></li>
+      <li><a href="#en-rent">Recording rent</a></li>
+      <li><a href="#en-remind">WhatsApp reminders and receipts</a></li>
+      <li><a href="#en-costs">Expenses and repairs</a></li>
+      <li><a href="#en-bills">Electricity and water bill check</a></li>
+      <li><a href="#en-alerts">Notifications</a></li>
+      <li><a href="#en-money">Money tab and reports</a></li>
+      <li><a href="#en-settings">Settings</a></li>
+      <li><a href="#en-pro">Aqaraty Pro</a></li>
+      <li><a href="#en-privacy">Privacy and backups</a></li>
+      <li><a href="#en-help">Help</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="en-start">1. Getting started</h2>
+  <h3>The first-launch guide</h3>
+  <p>When the app is empty, a 5-step guide walks you through: language and where your first property is (this sets the currency and the phone country code), then the property, the tenant, the rent and how you get paid, and finally the alerts. You can tap “Skip” on any step — what you've filled in is kept.</p>
+  <div class="why"><b>Why?</b> So you reach your first reminder and receipt in two minutes, without hunting through menus.</div>
+  <ul>
+    <li>The <b>«ع / EN»</b> button switches the whole app's language at any moment, without losing what you typed.</li>
+    <li>A tenant who has lived there for years: enter the real lease start date and keep “The tenant has paid every rent due before today” on — past rents are entered as paid, so no false arrears appear. If they still owe something, switch it off and record what they paid.</li>
+    <li>Want to look first? Tap “Or look around with example data”. Example properties never count as yours.</li>
+  </ul>
+
+  <h3>Phone numbers</h3>
+  <p>Every number has its own country-code button (Jordan and the Gulf first), so a tenant can have a number from any country. Pasting a number that starts with +971 or 00966 switches the code by itself; a leading 0 and spaces are removed, and Arabic digits ٠١٢ are converted. If the number of digits looks wrong you see a warning — it never stops you saving.</p>
+
+  <h2 id="en-home">2. Home</h2>
+  <ul>
+    <li><b>Record payment</b> — when rent arrives: choose who paid and the amount owed is already filled in. If only one rent is due anywhere, it opens straight away.</li>
+    <li><b>Add expense</b> — a repair, a bill, a tax… for one property or a whole building.</li>
+    <li><b>The figures</b> — collected, spent, net and unpaid rent, for this month, this year or all time.</li>
+    <li><b>Needs attention</b> — late rent, time to follow up after a reminder, leases ending, unpaid repairs, bills not checked, instalments due. Tap a row to deal with it.</li>
+    <li><b>Coming up</b> — the next rents, in date order.</li>
+  </ul>
+
+  <h2 id="en-props">3. Properties and buildings</h2>
+  <h3>Adding a property</h3>
+  <p><span class="path">Properties → + → Add property</span>. Give it a name you recognise (e.g. “Jubeiha flat 2”), the type, a colour, the electricity and water meter numbers (tap a number to copy it) and notes.</p>
+  <div class="why"><b>Official name:</b> your own name for the property stays inside the app. The “official name” in English and Arabic is what the tenant sees in messages and receipts.</div>
+  <h3>Buildings</h3>
+  <p><span class="path">Properties → + → Add building</span>, then on the building's page: “Add units” — either “Move existing properties in” or “Create a new unit”.</p>
+  <ul>
+    <li>Each flat's own income, and the building's total.</li>
+    <li>“Add building expense” and “Add building repair” — for costs that belong to the whole building, like cleaning the water tanks, the stairwell or a guard. They count against the building, not split across flats.</li>
+    <li>Deleting a building never deletes its flats — they become stand-alone properties again. A building with costs can't be deleted; archive it instead.</li>
+  </ul>
+  <h3>Archiving</h3>
+  <p>Sold a property or no longer manage it? “Archived” hides it from the lists without deleting its history.</p>
+
+  <h2 id="en-tenants">4. Tenants and leases</h2>
+  <p>On the property's page: <span class="path">Add tenant and rent</span>.</p>
+  <ul>
+    <li><b>Name</b> — and an Arabic name if you like (used in Arabic messages).</li>
+    <li><b>Rent</b> — the amount, how often (monthly, every 3 months, every 6 months, yearly, or a number of months you choose) and when the first payment is due. Every due date is worked out for you.</li>
+    <li><b>Lease</b> — an end date (optional), the deposit, and “Deposit returned”.</li>
+    <li><b>Documents</b> — the contract (PDF, photo, or a paper contract scanned with the camera) and the ID, front and back.</li>
+    <li><b>Message language</b> — each tenant has their own (9 languages), remembered for every future message.</li>
+  </ul>
+  <p>From the same page: <b>Renew lease</b> (a new lease that closes the old one) and <b>End lease / tenant moved out</b>. Former tenants stay under “Past tenants”.</p>
+
+  <h2 id="en-rent">5. Recording rent</h2>
+  <ul>
+    <li><b>Part payment</b> — enter what you received; the rest stays owed.</li>
+    <li><b>One payment for several months</b> — if the amount is more than one rent, it is spread over the months. If the tenant is behind, choose where the extra goes: “Older unpaid months” (oldest first) or “Following months”.</li>
+    <li><b>Discount</b> — lowers what is owed, but is not counted as money received.</li>
+    <li><b>Give more time</b> — moves a rent's date; it isn't counted as late until the new date.</li>
+    <li><b>Edit or delete</b> — tap the rent's row, then the payment.</li>
+    <li>Under each paid rent you see <b>the date it was received</b> — so you can match it with your bank statement.</li>
+  </ul>
+
+  <h2 id="en-remind">6. WhatsApp reminders and receipts</h2>
+  <p>On the property's page: <span class="path">Send rent reminder</span>. It opens WhatsApp with the message ready, in the tenant's language, listing everything owed (each late month on its own line, plus the total). If you switch it on, your CliQ alias and Zain Cash number are added at the bottom.</p>
+  <ul>
+    <li><b>Reminder history</b> — under the button: “2nd reminder sent 5 days ago”. The app knows WhatsApp was opened, not that the message was actually sent.</li>
+    <li><b>Time to follow up</b> — if rent is still unpaid a set number of days after the last reminder (Settings), it shows in Needs attention.</li>
+    <li><b>Receipt</b> — tap a paid rent → “Receipt”: a neat image to send on WhatsApp, showing anything still outstanding.</li>
+    <li><b>Reminder wording</b> <span class="pro">PRO</span> — <span class="path">Settings → Reminder message</span>: write your own text for each language, using {tenant} {property} {amount} {date}.</li>
+  </ul>
+
+  <h2 id="en-costs">7. Expenses and repairs</h2>
+  <ul>
+    <li><b>Repair</b> — title, the contractor and their number (remembered for next time), status (to do, scheduled, done), cost and date paid. A repair counts as spending once it is paid.</li>
+    <li><b>Expense</b> — tax, insurance, furnishing, paperwork… with a photo of the bill.</li>
+    <li><b>Categories</b> — one list for repairs and expenses, edited in <span class="path">Settings → Categories</span>.</li>
+    <li><b>In instalments</b> — switch on “Paid in instalments” and add the instalments. For one not paid yet, choose “Not paid yet — remind me on the day”.</li>
+  </ul>
+
+  <h2 id="en-bills">8. Electricity and water bill check</h2>
+  <p>Tenants pay the bills, but unpaid ones can become the landlord's problem when they leave. Switch on <span class="path">Settings → Monthly bill check</span> and choose the day. Each month, mark every bill paid or unpaid, with the amount and a photo if you like. An unpaid bill stays in Needs attention.</p>
+
+  <h2 id="en-alerts">9. Notifications</h2>
+  <ul>
+    <li>A chosen number of days before rent is due, and the day after if it's late.</li>
+    <li>Before a lease ends — 90, 60 and 30 days, or days you add.</li>
+    <li>On the day of a planned instalment, and on your bill-check day.</li>
+  </ul>
+  <p>Allow notifications the first time you're asked. Not getting them? <span class="path">Info → App permissions</span>.</p>
+
+  <h2 id="en-money">10. Money tab and reports</h2>
+  <p>Every payment, repair and expense across all properties in one place, with search. Swipe a payment sideways to edit it. <b>“Spending by category”</b> answers “how much did I spend on plumbing this year?” — from repairs and expenses together.</p>
+
+  <h2 id="en-settings">11. Settings</h2>
+  <ul>
+    <li>App language, and the default message language.</li>
+    <li>Currency. <b>Payment methods</b>: add, rename, reorder, hide, and choose the default.</li>
+    <li>How tenants pay you: your CliQ alias and Zain Cash number.</li>
+    <li>Reminders, follow-up and lease-ending alerts.</li>
+    <li>Face ID lock.</li>
+    <li>Statements and backup.</li>
+  </ul>
+
+  <h2 id="en-pro">12. Aqaraty Pro</h2>
+  <p>The free version includes <b>one property</b>, fully working. Pro unlocks unlimited properties, the yearly PDF statement and your own reminder wording. The CSV backup is always free — it's your data. Prices are shown inside the app.</p>
+
+  <h2 id="en-privacy">13. Privacy and backups</h2>
+  <p>Everything is on your device and in your own iCloud, synced between your devices. We never see your data. A backup you keep yourself is still worth having: <span class="path">Settings → Statements and backup</span>.</p>
+
+  <h2 id="en-help">14. Help</h2>
+  <p>A question, a problem or an idea? <a href="mailto:firasrabi@gmail.com">firasrabi@gmail.com</a> — or in the app: <span class="path">Info → Email the developer</span>.</p>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-lang="ar">عقاراتي · <a href="aqaraty-support.html">الدعم</a> · <a href="aqaraty-privacy.html">سياسة الخصوصية</a></span>
+    <span data-lang="en">Aqaraty · <a href="aqaraty-support.html">Support</a> · <a href="aqaraty-privacy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  function setLang(lang) {
+    document.body.className = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.getElementById('btn-ar').setAttribute('aria-pressed', lang === 'ar');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+    try { var u = new URL(location.href); u.searchParams.set('lang', lang); history.replaceState(null, '', u); } catch (e) {}
+  }
+  var q = new URLSearchParams(location.search).get('lang');
+  var start = q === 'en' || q === 'ar' ? q : ((navigator.language || '').indexOf('ar') === 0 ? 'ar' : 'en');
+  setLang(start);
+  document.getElementById('btn-ar').onclick = function () { setLang('ar'); };
+  document.getElementById('btn-en').onclick = function () { setLang('en'); };
+})();
+</script>
+</body>
+</html>
