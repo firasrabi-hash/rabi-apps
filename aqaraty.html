@@ -100,7 +100,24 @@
     padding: 22px 0 46px; font-size: 14px; color: var(--muted); text-align: center;
   }
   footer a { color: var(--blue); } .android { margin-top: 34px; background: #eef7f4; border: 1px solid #cfe9e1; border-radius: 14px; padding: 18px 20px; text-align: center; } .android h2 { margin: 0 0 6px; } .android p { margin: 0 0 14px; color: var(--muted); font-size: 16px; } .android a { display: inline-block; background: var(--teal); color: #fff; text-decoration: none; font-weight: 700; border-radius: 12px; padding: 10px 22px; }
+  .new { margin: 8px auto 0; font-size: 14px; font-weight: 500; opacity: .95; max-width: 420px; }
+  .sticky {
+    display: none;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255,255,255,.96);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -4px 16px rgba(0,0,0,.08);
+  }
+  .sticky a {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: #000; color: #fff; text-decoration: none;
+    border-radius: 12px; padding: 12px; font-size: 17px; font-weight: 700;
+  }
+  .sticky svg { width: 22px; height: 22px; fill: #fff; }
   @media (max-width: 520px) {
+    .sticky { display: block; }
+    body { padding-bottom: 80px; }
     h1 { font-size: 30px; }
     .grid { grid-template-columns: 1fr; }
     .shots img { height: 360px; }
@@ -121,7 +138,8 @@
         <span><small>حمّله من</small>App Store</span>
       </a>
     </div>
-    <p class="req">للآيفون والآيباد · يتطلب iOS 26.5 أو أحدث</p>
+    <p class="req">للآيفون والآيباد · يتطلب iOS 18 أو أحدث</p>
+    <p class="new">🆕 الإصدار ١.٢: دليل بداية، صفحة لكل مستأجر، وتنبيه قبل انتهاء العقد</p>
   </div>
 </header>
 
@@ -202,6 +220,25 @@
     <a href="mailto:firasrabi@gmail.com">firasrabi@gmail.com</a>
   </div>
 </footer>
+
+<div class="sticky">
+  <a class="cta-link" href="https://apps.apple.com/app/aqaraty-rent-tracker/id6803222797?pt=129271597&amp;ct=fb-ad&amp;mt=8">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-2.99-.79-1.54.02-2.96.9-3.75 2.27-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.38-.92-2.4-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg>
+    حمّله مجاناً من App Store
+  </a>
+</div>
+
+<script>
+  // Pass the visitor's source tag (?ct=fb-page, ?ct=fb-group…) through to the App Store links.
+  try {
+    var ct = new URLSearchParams(location.search).get('ct');
+    if (ct && /^[\w-]{1,40}$/.test(ct)) {
+      document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function (a) {
+        a.href = a.href.replace(/ct=[^&]*/, 'ct=' + encodeURIComponent(ct));
+      });
+    }
+  } catch (e) {}
+</script>
 
 </body>
 </html>
